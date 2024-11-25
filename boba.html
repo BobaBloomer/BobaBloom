@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boba Bloom - Cafetería</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;500&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f4f5;
+      color: #333;
+      transition: background-color 0.5s ease;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      color: #264653;
+      margin-bottom: 20px;
+      transition: color 0.5s ease;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      color: #2a9d8f;
+      margin-bottom: 20px;
+      transition: color 0.5s ease;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6em;
+    }
+
+    /* Menú desplegable lateral */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #ffe4e1;
+      overflow-x: hidden;
+      transition: width 0.5s ease, background-color 0.5s ease;
+      padding-top: 60px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 1.5em;
+      color: #264653;
+      display: block;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      color: #e76f51;
+      background-color: #f4f4f4;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 2em;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .openbtn {
+      font-size: 1.5em;
+      cursor: pointer;
+      background-color: #e76f51;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .openbtn:hover {
+      background-color: #f4a261;
+    }
+
+    /* Sección Inicio */
+    #inicio {
+      background: linear-gradient(135deg, #ffe4e1, #f9f4f5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #inicio img {
+      width: 320px; /* Logo más grande */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    #inicio p {
+      font-size: 1.3em;
+      color: #555;
+    }
+
+    /* Sección Acerca de Nosotros */
+    #acerca {
+      background-color: #fdf2f2;
+      padding: 40px 20px;
+    }
+
+    /* Sección Menú */
+    #menu {
+      background-color: #fff;
+      padding: 40px 20px;
+    }
+
+    #menu img {
+      width: 80%;
+      max-width: 700px;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    /* Sección Contacto */
+    #contacto {
+      background-color: #fdf2f2;
+      padding: 40px 20px;
+    }
+
+    /* Transición para fondos */
+    section {
+      transition: background-color 0.5s ease;
+    }
+
+    /* Estilo para móviles */
+    @media (max-width: 768px) {
+      #inicio h1 {
+        font-size: 2.5em;
+      }
+
+      #acerca h2, #menu h2, #contacto h2 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú desplegable lateral -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#acerca">Acerca de Nosotros</a>
+    <a href="#menu">Menú</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+
+  <button class="openbtn" onclick="openNav()">&#9776; Menú</button>
+
+  <!-- Sección Inicio -->
+  <section id="inicio">
+    <img src="LOGO.png" alt="Logo de Boba Bloom">
+    <h1>Bienvenido a Boba Bloom</h1>
+    <p>Explora una experiencia única con nuestras deliciosas bebidas de tapioca, inspiradas en la belleza de las flores. ¡Una mezcla perfecta de sabor y arte!</p>
+  </section>
+
+  <!-- Sección Acerca de Nosotros -->
+  <section id="acerca">
+    <h2>Acerca de Nosotros</h2>
+    <p>Somos una cafetería especializada en bebidas con tapioca. Nuestra inspiración nace de la delicadeza y diversidad de las flores, combinando sabores auténticos con un toque de creatividad para ofrecerte una experiencia inolvidable.</p>
+  </section>
+
+  <!-- Sección Menú -->
+  <section id="menu">
+    <h2>Menú</h2>
+    <p>Descubre nuestras bebidas y postres únicos. ¡Algo para cada ocasión!</p>
+    <img src="NUEVO MENU.png" alt="Menú de Boba Bloom">
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Aquí podrás escribir tu información de contacto.</p>
+  </section>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
+</body>
+</html>
